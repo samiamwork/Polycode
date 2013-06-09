@@ -78,6 +78,12 @@ THE SOFTWARE.
 	#define PLATFORM PLATFORM_UNIX
 #endif
 
+#if PLATFORM == PLATFORM_MAC
+#	define POLY_UNUSED __attribute__((unused))
+#else
+#	define POLY_UNUSED
+#endif
+
 typedef double Number;
 
 #define RANDOM_NUMBER ((Number)rand()/(Number)RAND_MAX)
